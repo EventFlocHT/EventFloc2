@@ -95,14 +95,14 @@
     <orderEntry type="library" exported="" name="jasypt-wicket13-1.9.2-sources" level="project" />
     <orderEntry type="library" exported="" name="jasypt-1.9.2" level="project" />
     <orderEntry type="library" exported="" name="jasypt-wicket15-1.9.2-sources" level="project" />
-    <orderEntry type="library" exported="" name="jasypt-acegisecurity-1.9.2-javadoc" level="project" />
     <orderEntry type="library" exported="" name="jasypt-springsecurity2-1.9.2-sources" level="project" />
+    <orderEntry type="library" exported="" name="jasypt-acegisecurity-1.9.2-javadoc" level="project" />
     <orderEntry type="library" exported="" name="jasypt-1.9.2-javadoc" level="project" />
     <orderEntry type="library" exported="" name="jasypt-1.9.2-lite" level="project" />
-    <orderEntry type="library" exported="" name="jasypt-springsecurity3-1.9.2-sources" level="project" />
     <orderEntry type="library" exported="" name="jasypt-hibernate4-1.9.2" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="jasypt-spring3-1.9.2-javadoc" level="project" />
+    <orderEntry type="library" exported="" name="jasypt-springsecurity3-1.9.2-sources" level="project" />
     <orderEntry type="library" exported="" name="jasypt-1.9.2-sources" level="project" />
     <orderEntry type="library" exported="" name="jasypt-springsecurity2-1.9.2" level="project" />
     <orderEntry type="library" exported="" name="jasypt-hibernate3-1.9.2" level="project" />
