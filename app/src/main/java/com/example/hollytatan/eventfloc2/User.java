@@ -10,6 +10,7 @@ import org.jasypt.util.password.*;
     private int userID;
     private String userEmail;
     private String password;
+    private String encryptedPassword;
 
     //User type 0 = admin , 1 = student, 2 = society
     private int userType;
@@ -50,7 +51,7 @@ import org.jasypt.util.password.*;
     }
 
     public String getPassword() {
-        return password;
+        return encryptedPassword;
     }
 
     public void setPassword(String password) {
@@ -59,5 +60,17 @@ import org.jasypt.util.password.*;
 
     public String encryptPassword() {
         StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
+        encryptedPassword = passwordEncryptor.encryptPassword(password);
+        return encryptedPassword;
+    }
+
+    public boolean checkPassword(String userEmail, String submittedPassword) {
+        StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
+        String encryptedPassword = DatabaseQueries.getUser(userEmail).getPassword();
+        return passwordEncryptor.checkPassword(submittedPassword, encryptedPassword);
+    }
+
+    public void storeUserPassword(String username, String hashedPassword) {
+
     }
 }

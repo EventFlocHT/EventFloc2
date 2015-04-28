@@ -164,9 +164,8 @@ public class DatabaseQueries extends SQLiteOpenHelper {
             + COMMENT_DATE + " date, "
             + COMMENT_TEXT + " blob);";
 
-
-    public DatabaseQueries(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
+    public DatabaseQueries(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
 
@@ -557,6 +556,26 @@ public class DatabaseQueries extends SQLiteOpenHelper {
      */
     public User getUser(int userID) {
         String query = "SELECT * from " + TABLE_USER + " where " + USER_ID + " = \"" + userID + "\";";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        User user = new User();
+
+
+        if (cursor.moveToFirst()) {
+            cursor.moveToFirst();
+            user.setUserID(Integer.parseInt(cursor.getString(0)));
+            user.setUserEmail(cursor.getString(1));
+            user.setPassword(cursor.getString(2));
+            cursor.close();
+        } else {
+            user = null;
+        }
+        db.close();
+        return user;
+    }
+
+    public User getUser(String userEmail) {
+        String query = "SELECT * from " + TABLE_USER + " where " + USER_EMAIL + " = \"" + userEmail + "\";";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         User user = new User();
