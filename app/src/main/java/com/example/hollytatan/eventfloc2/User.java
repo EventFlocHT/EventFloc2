@@ -1,5 +1,7 @@
 package com.example.hollytatan.eventfloc2;
 
+import org.jasypt.util.password.*;
+
 /**
  * Created by hollytatan on 28/04/15.
  */
@@ -57,6 +59,5 @@ package com.example.hollytatan.eventfloc2;
 
     public String encryptPassword() {
         StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
-        GoogleCow magic = new GoogleCow();
     }
 }
